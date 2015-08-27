@@ -1,0 +1,10 @@
+################################
+# Dune module information file #
+################################
+
+#Name of the module
+Module: dune-mm-amg
+Version: 0.0
+Maintainer: markus@dr-blatt.de
+#depending on 
+Depends: dune-istl
