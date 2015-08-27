@@ -1,73 +1,51 @@
-Preparing the Sources
-=========================
+dune-mm-amg
+===========
 
-Additional to the software mentioned in README you'll need the
-following programs installed on your system:
+A DUNE module that lets you read linear systems from matrix market files and
+the solves it using the aggregation AMG that comes with dune-istl.
 
-  automake >= 1.5
+Dependencies
+------------
 
-  autoconf >= 2.50
+dune-mm-amg depens on the following software packages
 
-  libtool
+- dune-istl >=2.3 module http://dune-project.org
+- CMake
+- A C++11 standard conforming compiler, e.g. GNU C >=4.4
 
-Getting started
----------------
+License
+-------
 
-If these preliminaries are met, you should run 
+The DUNE-library and headers are licensed under version 2 of the GNU
+General Public License, with the so-called "runtime exception", as
+follows:
 
-  dunecontrol all
+   As a special exception, you may use the DUNE source files as part
+   of a software library or application without restriction.
+   Specifically, if other files instantiate templates or use macros or
+   inline functions from one or more of the DUNE source files, or you
+   compile one or more of the DUNE source files and link them with
+   other files to produce an executable, this does not by itself cause
+   the resulting executable to be covered by the GNU General Public
+   License.  This exception does not however invalidate any other
+   reasons why the executable file might be covered by the GNU General
+   Public License.
 
-which will find all installed dune modules as well as all dune modules 
-(not installed) which sources reside in a subdirectory of the current 
-directory. Note that if dune is not installed properly you will either
-have to add the directory where the dunecontrol script resides (probably 
-./dune-common/bin) to your path or specify the relative path of the script.
+This licence clones the one of the libstc++ library. For further
+implications of this library please see their licence page [3]
 
-On your project and all uninstalled DUNE source modules found the script 
-will then calls the GNU autoconf/automake to create a ./configure-script 
-and the Makefiles. Afterwards that configure script will be called and the
-modules will be build using make all
+See the file COPYING for full copying permissions.
 
-Most probably you'll have to provide additional information to dunecontrol 
-(e. g. compilers, configure options) and/or make options. 
+Installation
+------------
 
-The most convenient way is to use options files in this case. The files
-defining three variables:
+Short installation instructions can be found in file INSTALL. For the
+full instructions please see [0].
 
-AUTOGEN_FLAGS    flags passed to autogen
-CONFIGURE_FLAGS  flags passed to configure
-MAKE_FLAGS       flags passed to make
+Links
+-----
 
-An example options file might look like this:
-
-#use this options to autogen, configure and make if no other options are given
-AUTOGEN_FLAGS="--ac=2.50 --ac=1.8" #Forces automake 2,50 and autoconf 1.8
-CONFIGURE_FLAGS="CXX=g++-3.4 --prefix=/install/path" #force g++-3.4 as compiler
-MAKE_FLAGS=install #Per default run make install instead of simply make
-
-If you save this information into example.opts you can path the opts file to
-dunecontrol via the --opts option, e. g.
-
-  dunecontrol --opts=example.opts all
-
-To get a full list of available configure flags just run
-
-  dunecontrol configure --help
-
-after running at least 
-  dunecontrol autogen
-
-More info
----------
-
-See
-
-     dunecontrol --help
-   
-for further options.
-
-
-The full build-system is described in the dune-common/doc/buildsystem (SVN version) or under share/doc/dune-common/buildsystem if you installed DUNE!
-
-$Id: duneproject 6400 2011-03-18 16:29:45Z mblatt $
-
+0. http://www.dune-project.org/doc/installation-notes.html
+1. http://www.dune-project.org/download.html
+2. http://dune-project.org/doc/buildsystem/buildsystem.pdf
+3. http://gcc.gnu.org/onlinedocs/libstdc++/faq.html#faq.license
