@@ -8,7 +8,7 @@
 #include<dune/istl/matrixmarket.hh>
 
 #include<iostream>
-#define BS 3
+#define BS 1
 int main()
 {
   typedef Dune::FieldMatrix<double,BS,BS> MatrixBlock;
