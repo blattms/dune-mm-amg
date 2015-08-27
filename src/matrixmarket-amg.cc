@@ -32,7 +32,7 @@ int main()
   //typedef Dune::SeqOverlappingSchwarz<BCRSMat,BVector,Dune::MultiplicativeSchwarzMode> Smoother;
   //typedef Dune::SeqOverlappingSchwarz<BCRSMat,BVector,Dune::SymmetricMultiplicativeSchwarzMode> Smoother;
   //typedef Dune::SeqOverlappingSchwarz<BCRSMat,BVector> Smoother;
-  typedef typename Dune::Amg::SmootherTraits<Smoother>::Arguments SmootherArgs;
+  typedef Dune::Amg::SmootherTraits<Smoother>::Arguments SmootherArgs;
   SmootherArgs smootherArgs;
 
   smootherArgs.iterations = 1;
